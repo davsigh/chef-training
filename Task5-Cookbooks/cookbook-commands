@@ -1,0 +1,60 @@
+
+[root@ip-172-31-42-180 ~]# chef generate --help
+
+[root@ip-172-31-42-180 chef-training]# mkdir cookbooks
+
+[root@ip-172-31-42-180 chef-training]# chef generate cookbook cookbooks/workstation
+Generating cookbook workstation
+- Ensuring correct cookbook content
+
+Your cookbook is ready. Type `cd cookbooks/workstation` to enter it.
+
+There are several commands you can run to get started locally developing and testing your cookbook.
+Type `delivery local --help` to see a full list of local testing commands.
+
+Why not start by writing an InSpec test? Tests for the default recipe are stored at:
+
+test/integration/default/default_test.rb
+
+If you'd prefer to dive right in, the default recipe can be found at:
+
+recipes/default.rb
+
+
+#Cookbook structure created
+[root@ip-172-31-42-180 chef-training]# tree
+.
+├── cookbooks
+│   └── workstation
+│       ├── CHANGELOG.md
+│       ├── chefignore
+│       ├── kitchen.yml
+│       ├── LICENSE
+│       ├── metadata.rb
+│       ├── Policyfile.rb
+│       ├── README.md
+│       ├── recipes
+│       │   └── default.rb
+│       ├── spec
+│       │   ├── spec_helper.rb
+│       │   └── unit
+│       │       └── recipes
+│       │           └── default_spec.rb
+│       └── test
+│           └── integration
+│               └── default
+│                   └── default_test.rb
+├── nodes
+│   └── ip-172-31-42-180.ap-south-1.compute.internal.json
+├── README.md
+├── Task1
+│   ├── hello.rb
+│   └── solution
+├── Task2-Resources
+│   ├── Install-package.rb
+│   └── Solution
+├── Task3-File
+│   ├── file.rb
+│   └── Solution
+└── Task4-motd
+    └── motd.rb

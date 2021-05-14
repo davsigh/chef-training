@@ -1,0 +1,31 @@
+[root@ip-172-31-42-180 chef-training]# chef-client -z Task4-motd/motd.rb
+
+#expected output
+
+[2021-05-14T03:34:59+00:00] WARN: No config file found or specified on command line. Using command line options instead.
+[2021-05-14T03:34:59+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root/chef-trainings/chef-training.
+Starting Chef Infra Client, version 16.10.8
+Patents: https://www.chef.io/patents
+resolving cookbooks for run list: []
+Synchronizing Cookbooks:
+Installing Cookbook Gems:
+Compiling Cookbooks...
+[2021-05-14T03:35:01+00:00] WARN: Node ip-172-31-42-180.ap-south-1.compute.internal has an empty run list.
+Converging 1 resources
+Recipe: @recipe_files::/root/chef-trainings/chef-training/Task4-motd/motd.rb
+  * file[/etc/motd] action create
+    - update content in file /etc/motd from e3b0c4 to 12b1a2
+    --- /etc/motd	2018-09-10 11:51:03.000000000 +0000
+    +++ /etc/.chef-motd20210514-2850-jm8954	2021-05-14 03:35:01.591340755 +0000
+    @@ -1 +1,2 @@
+    +Its a development machine so please dont use it for production
+    - restore selinux security context
+
+Running handlers:
+Running handlers complete
+Chef Infra Client finished, 1/1 resources updated in 02 seconds
+
+#verification Results
+bash-3.2$ ssh -i "yadwindermumbai.pem" ec2-user@13.235.241.150
+Its a development machine so please dont use it for production
+Last login: Fri May 14 02:39:27 2021 from 103.41.36.78
