@@ -5,7 +5,7 @@ package 'httpd' do
     action :install
 end
 template '/var/www/html/index.html' do
-    source 'motd.erb'
+    source 'index.html.erb'
     owner 'root'
     group 'root'
     mode '0755'
@@ -13,4 +13,8 @@ template '/var/www/html/index.html' do
 end
 service 'httpd' do
     action :start
+end
+template '/etc/motd' do
+    source 'motd.erb'
+       action :create
 end
