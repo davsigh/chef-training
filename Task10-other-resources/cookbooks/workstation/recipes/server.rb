@@ -2,7 +2,7 @@ package 'httpd' do
     action :install
 end
 cookbook_file '/var/www/html/index.html' do
-    source 'filename'
+    source 'index.html'
     owner 'root'
     group 'root'
     mode '0755'
