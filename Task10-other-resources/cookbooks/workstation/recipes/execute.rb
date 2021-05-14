@@ -5,7 +5,7 @@ service 'vsftpd' do
     action :start
 end
 execute 'version check' do
-    command 'vsftpd -v'
+    command 'vsftpd -v >vsftpd.txt'
     action :run
 end
 
