@@ -15,5 +15,8 @@ file '/var/www/html/index.html' do
     \nHOSTNAME: #{node['hostname']}"
     action :create
 end
+service 'httpd' do
+    action [:enable,:start]
+end
 
 
