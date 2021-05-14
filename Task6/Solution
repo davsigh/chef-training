@@ -1,0 +1,35 @@
+[root@ip-172-31-42-180 chef-training]# chef exec ruby -c Task6/cookbooks/workstation/recipes/server.rb
+Syntax OK
+
+[root@ip-172-31-42-180 chef-training]# chef-client -z cookbooks/workstation/recipes/server.rb
+
+[2021-05-14T04:06:44+00:00] WARN: No config file found or specified on command line. Using command line options instead.
+Starting Chef Infra Client, version 16.10.8
+Patents: https://www.chef.io/patents
+resolving cookbooks for run list: []
+Synchronizing Cookbooks:
+Installing Cookbook Gems:
+Compiling Cookbooks...
+[2021-05-14T04:06:47+00:00] WARN: Node ip-172-31-42-180.ap-south-1.compute.internal has an empty run list.
+Converging 4 resources
+Recipe: @recipe_files::/root/chef-trainings/chef-training/cookbooks/workstation/recipes/server.rb
+  * dnf_package[httpd] action remove
+    - remove package httpd
+  * dnf_package[httpd] action install
+    - install version 0:2.4.37-30.module+el8.3.0+7001+0766b9e7.x86_64 of package httpd
+  * service[httpd] action enable
+    - enable service service[httpd]
+  * service[httpd] action start
+    - start service service[httpd]
+  * file[/var/www/html/index.html] action create
+    - update content in file /var/www/html/index.html from d9d5d8 to 7276a9
+    --- /var/www/html/index.html	2021-05-14 03:28:06.985494644 +0000
+    +++ /var/www/html/.chef-index20210514-3150-1f8a2ec.html	2021-05-14 04:07:02.067977589 +0000
+    @@ -1,2 +1,2 @@
+    -New webserver for chef file testing
+    +Webserver to create new recipe
+    - restore selinux security context
+
+Running handlers:
+Running handlers complete
+Chef Infra Client finished, 5/5 resources updated in 17 seconds
