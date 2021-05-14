@@ -5,7 +5,7 @@ package 'httpd' do
     action :install
 end
 template '/var/www/html/index.html' do
-    source 'index.html.erb'
+    source 'Index.html.erb'
     owner 'root'
     group 'root'
     mode '0755'
