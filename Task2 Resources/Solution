@@ -1,0 +1,28 @@
+#Command to run
+[root@ip-172-31-42-180 chef-training]# chef-client -z Task2\ Resources/Install-package.rb
+
+#Expected Output
+
+[2021-05-14T03:20:59+00:00] WARN: No config file found or specified on command line. Using command line options instead.
+[2021-05-14T03:20:59+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root/chef-trainings/chef-training.
+Starting Chef Infra Client, version 16.10.8
+Patents: https://www.chef.io/patents
+resolving cookbooks for run list: []
+Synchronizing Cookbooks:
+Installing Cookbook Gems:
+Compiling Cookbooks...
+[2021-05-14T03:21:01+00:00] WARN: Node ip-172-31-42-180.ap-south-1.compute.internal has an empty run list.
+Converging 3 resources
+Recipe: @recipe_files::/root/chef-trainings/chef-training/Task2 Resources/Install-package.rb
+  * dnf_package[httpd] action remove
+    - remove package httpd
+  * dnf_package[httpd] action install
+    - install version 0:2.4.37-30.module+el8.3.0+7001+0766b9e7.x86_64 of package httpd
+  * service[httpd] action enable
+    - enable service service[httpd]
+  * service[httpd] action start
+    - start service service[httpd]
+
+Running handlers:
+Running handlers complete
+Chef Infra Client finished, 4/4 resources updated in 16 seconds
