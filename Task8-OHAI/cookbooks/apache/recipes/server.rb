@@ -11,8 +11,8 @@ package 'httpd' do
 end
 file '/var/www/html/index.html' do
     content "<h1>Its my webserver</h1>
-    \nIPADDRESS: #{node['ipaddress']}\n
-    \nHOSTNAME: #{node['hostname']}"
+    <h2> \nIPADDRESS: #{node['ipaddress']}\n </h2>
+    <h2>\nHOSTNAME: #{node['hostname']}</h2>"
     action :create
 end
 service 'httpd' do
