@@ -1,0 +1,36 @@
+# Command to run 
+chef-client -z hello.rb
+
+#expected output 
+
+[2021-05-14T03:00:22+00:00] WARN: No config file found or specified on command line. Using command line options instead.
+[2021-05-14T03:00:22+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root/chef-trainings/chef-training.
+Starting Chef Infra Client, version 16.10.8
+Patents: https://www.chef.io/patents
+resolving cookbooks for run list: []
+Synchronizing Cookbooks:
+Installing Cookbook Gems:
+Compiling Cookbooks...
+[2021-05-14T03:00:25+00:00] WARN: Node ip-172-31-42-180.ap-south-1.compute.internal has an empty run list.
+Converging 1 resources
+Recipe: @recipe_files::/root/chef-trainings/chef-training/hello.rb
+  * file[hello.txt] action create
+    - update content in file hello.txt from e93342 to 46d7dd
+    --- hello.txt	2021-05-09 07:46:16.933422738 +0000
+    +++ ./.chef-hello20210514-1425-z9l1ne.txt	2021-05-14 03:00:25.390048521 +0000
+    @@ -1,2 +1,2 @@
+    -My first file
+    +First Task Hello World
+    - restore selinux security context
+
+Running handlers:
+Running handlers complete
+Chef Infra Client finished, 1/1 resources updated in 02 seconds
+
+#Verify Result 
+
+[root@ip-172-31-42-180 chef-training]# ls -l /hello.txt
+-rwxr-xr-x. 1 root root 22 May 14 03:00 /hello.txt
+
+[root@ip-172-31-42-180 chef-training]# date
+Fri May 14 03:00:36 UTC 2021
