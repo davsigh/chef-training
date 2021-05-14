@@ -1,0 +1,40 @@
+#Command to Run
+
+[root@ip-172-31-42-180 chef-training]# chef-client -z Task3\ File/file.rb
+
+
+[2021-05-14T03:28:01+00:00] WARN: No config file found or specified on command line. Using command line options instead.
+[2021-05-14T03:28:01+00:00] WARN: No cookbooks directory found at or above current directory.  Assuming /root/chef-trainings/chef-training.
+Starting Chef Infra Client, version 16.10.8
+Patents: https://www.chef.io/patents
+resolving cookbooks for run list: []
+Synchronizing Cookbooks:
+Installing Cookbook Gems:
+Compiling Cookbooks...
+[2021-05-14T03:28:04+00:00] WARN: Node ip-172-31-42-180.ap-south-1.compute.internal has an empty run list.
+Converging 2 resources
+Recipe: @recipe_files::/root/chef-trainings/chef-training/Task3 File/file.rb
+  * dnf_package[httpd] action install (up to date)
+  * file[/var/www/html/index.html] action create
+    - update content in file /var/www/html/index.html from 0dce07 to d9d5d8
+    --- /var/www/html/index.html	2021-05-12 10:03:16.157000000 +0000
+    +++ /var/www/html/.chef-index20210514-2743-yml6ll.html	2021-05-14 03:28:06.985494644 +0000
+    @@ -1,4 +1,2 @@
+    -New webserver for cookbook testing   
+    -IPADDRESS: 172.31.42.180
+    -HOSTNAME: ip-172-31-42-180
+    +New webserver for chef file testing
+    - restore selinux security context
+
+Running handlers:
+Running handlers complete
+Chef Infra Client finished, 1/2 resources updated in 04 seconds
+
+
+
+#Verify in line #23,24,25,26 --> Deleted old contents and add new contents 
+   -New webserver for cookbook testing   
+    -IPADDRESS: 172.31.42.180
+    -HOSTNAME: ip-172-31-42-180
+    +New webserver for chef file testing
+    - restore selinux security context
