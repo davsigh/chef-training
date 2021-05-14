@@ -1,0 +1,2 @@
+[root@ip-172-31-42-180 cookbooks]# chef exec ruby -c apache/recipes/server.rb
+Syntax OK
