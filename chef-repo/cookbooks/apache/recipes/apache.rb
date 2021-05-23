@@ -4,8 +4,8 @@ end
 package 'httpd' do
     action :install
 end
-template '/var/www/html/index.html' do
-    source 'Index.html.erb'
+file '/var/www/html/index.html' do
+    content 'Its my webserver for LB testing'
     owner 'root'
     group 'root'
     mode '0755'
